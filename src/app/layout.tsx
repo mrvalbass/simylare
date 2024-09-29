@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { BACKGROUND } from "./constants/colors";
+import { BACKGROUND_PRIMARY } from "./constants/colors";
 
 export const metadata: Metadata = {
   title: "Simylare - Explorateur du royaume fongique",
@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased ${BACKGROUND}`}>{children}</body>
+      <body className={`antialiased ${BACKGROUND_PRIMARY}`}>{children}</body>
     </html>
   );
 }

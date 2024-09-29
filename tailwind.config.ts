@@ -13,6 +13,10 @@ const config: Config = {
         forestGreen: "#014652",
         beige: "#fefae0",
       },
+      fontFamily: {
+        Hanken: ["Hanken Grotesk", "sans-serif"],
+        Libre: ["Libre Baskerville", "serif"],
+      },
     },
   },
   plugins: [],
