@@ -14,7 +14,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <nav
-      className={`flex justify-between items-center w-full h-[10svh] ${BACKGROUND_SECONDARY} `}
+      className={`flex justify-between items-center w-full h-[10svh] md:h-[15svh] ${BACKGROUND_SECONDARY} `}
     >
       <div className={`h-full w-1/2 ${BACKGROUND_PRIMARY}`}>
         <div
