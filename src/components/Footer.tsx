@@ -13,11 +13,11 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 export default function Footer() {
   return (
     <nav
-      className={`flex justify-between items-center w-full h-[15svh] ${BACKGROUND_PRIMARY} `}
+      className={`flex justify-between items-center w-full h-[10svh] md:h-[15svh] ${BACKGROUND_PRIMARY} `}
     >
       <div className={`h-full w-1/2 ${BACKGROUND_SECONDARY}`}>
         <div
-          className={`flex md:flex-col ${BACKGROUND_PRIMARY} ${TEXT_PRIMARY} h-full md:px-10 rounded-br-[5svh] gap-6 justify-center`}
+          className={`flex md:flex-col ${BACKGROUND_PRIMARY} ${TEXT_PRIMARY} h-full md:px-10 rounded-br-[5svh] gap-6 items-center md:items-stretch justify-center`}
         >
           <Link
             href="mailto:jimmy.andreotti@simylare.com"
