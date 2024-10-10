@@ -14,14 +14,14 @@ export default function Footer() {
     >
       <div className={`h-full w-1/2 ${BACKGROUND_SECONDARY}`}>
         <div
-          className={`flex ${BACKGROUND_PRIMARY} ${TEXT_PRIMARY} h-full pl-24 rounded-br-[5svh]`}
+          className={`flex ${BACKGROUND_PRIMARY} ${TEXT_PRIMARY} h-full pl-10 md:pl-24 rounded-br-[5svh]`}
         >
           <Contacts />
         </div>
       </div>
       <div className={`h-full w-1/2 ${BACKGROUND_PRIMARY}`}>
         <div
-          className={`flex ${BACKGROUND_SECONDARY} ${TEXT_SECONDARY} h-full pr-24 rounded-tl-[5svh] items-center justify-end`}
+          className={`flex ${BACKGROUND_SECONDARY} ${TEXT_SECONDARY} h-full pr-10 md:pr-24 rounded-tl-[5svh] items-center justify-end`}
         >
           <Socials />
         </div>
