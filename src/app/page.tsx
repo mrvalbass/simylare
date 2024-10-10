@@ -6,6 +6,7 @@ import landing2 from "@/assets/landing-2.jpg";
 import { BACKGROUND_SECONDARY, TEXT_PRIMARY } from "./constants/colors";
 import Footer from "@/components/Footer";
 import { HighLightedText } from "@/components/HighlightedText";
+import { Separator } from "@/components/Separator";
 
 export default function Home() {
   return (
@@ -29,18 +30,14 @@ export default function Home() {
       </section>
 
       <section>
-        <div
-          className={`w-1/3 mx-auto h-[3px] rounded-full ${BACKGROUND_SECONDARY} my-5 md:my-10`}
-        ></div>
+        <Separator className={`${BACKGROUND_SECONDARY}`} />
         <p
           className={`font-Libre text-xl md:text-3xl text-center m-5 md:m-10 font-bold ${TEXT_PRIMARY} leading-loose md:leading-[2]`}
         >
           Découvrez l&apos; incroyable potentiel des{" "}
           <HighLightedText>champignons</HighLightedText> avec Simylare
         </p>
-        <div
-          className={`w-1/3 mx-auto h-[3px] rounded-full ${BACKGROUND_SECONDARY} my-5 md:my-10`}
-        ></div>
+        <Separator className={`${BACKGROUND_SECONDARY}`} />
       </section>
 
       <section
