@@ -3,18 +3,16 @@ import Header from "@/components/Header";
 import heroBackground from "@/assets/hero-background.jpg";
 import landing1 from "@/assets/landing-1.jpg";
 import landing2 from "@/assets/landing-2.jpg";
-import {
-  BACKGROUND_SECONDARY,
-  TEXT_PRIMARY,
-  TEXT_SECONDARY,
-} from "./constants/colors";
+import { BACKGROUND_SECONDARY, TEXT_PRIMARY } from "./constants/colors";
 import Footer from "@/components/Footer";
+import { HighLightedText } from "@/components/HighlightedText";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <div className="relative h-[200px] md:h-[350px]">
+
+      <section className="relative h-[200px] md:h-[350px]">
         <Image
           src={heroBackground}
           fill={true}
@@ -28,28 +26,25 @@ export default function Home() {
             Explorateur du royaume fongique
           </p>
         </div>
-      </div>
-      <div
-        className={`w-1/2 mx-auto h-[3px] rounded-full ${BACKGROUND_SECONDARY} my-5 md:my-10`}
-      ></div>
+      </section>
 
-      <p
-        className={`font-Libre text-xl md:text-3xl text-center m-5 md:m-10 font-bold ${TEXT_PRIMARY} leading-loose md:leading-[2]`}
-      >
-        Découvrez l&apos; incroyable potentiel des{" "}
-        <span className={`relative p-2 ${TEXT_SECONDARY} whitespace-nowrap`}>
-          <span
-            className={`${BACKGROUND_SECONDARY} w-full h-full rotate-2 inline-block absolute -z-10 rounded left-0 top-0`}
-          ></span>
-          champignons
-        </span>{" "}
-        avec Simylare
-      </p>
-      <div
-        className={`w-1/2 mx-auto h-[3px] rounded-full ${BACKGROUND_SECONDARY} my-5 md:my-10`}
-      ></div>
-      <div
-        className={`w-4/5 mx-auto my-5 md:my-10 flex flex-col gap-10 md:gap-20 font-Hanken ${TEXT_PRIMARY}`}
+      <section>
+        <div
+          className={`w-1/3 mx-auto h-[3px] rounded-full ${BACKGROUND_SECONDARY} my-5 md:my-10`}
+        ></div>
+        <p
+          className={`font-Libre text-xl md:text-3xl text-center m-5 md:m-10 font-bold ${TEXT_PRIMARY} leading-loose md:leading-[2]`}
+        >
+          Découvrez l&apos; incroyable potentiel des{" "}
+          <HighLightedText>champignons</HighLightedText> avec Simylare
+        </p>
+        <div
+          className={`w-1/3 mx-auto h-[3px] rounded-full ${BACKGROUND_SECONDARY} my-5 md:my-10`}
+        ></div>
+      </section>
+
+      <section
+        className={`w-4/5 max-w-[1000px] mx-auto my-5 md:my-10 flex flex-col gap-10 md:gap-20 font-Hanken ${TEXT_PRIMARY}`}
       >
         <div className="flex gap-5 md:gap-20 items-stretch">
           <p className="basis-1/2 md:leading-[2.5rem] md:text-xl">
@@ -84,7 +79,8 @@ export default function Home() {
             : apporter de la circularité à nos modes de production
           </p>
         </div>
-      </div>
+      </section>
+
       <Footer />
     </>
   );
