@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import * as motion from "framer-motion/client";
 import { CLICKABLE } from "@/app/constants/style";
 
-export function UnderlinedAnimatedText({
+export default function UnderlinedAnimatedText({
   children,
   lineColor,
 }: {

@@ -3,7 +3,7 @@ import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
-export function Socials({ className }: { className?: string }) {
+export default function Socials({ className }: { className?: string }) {
   return (
     <div className={`flex gap-6 h-full max-h-7 md:max-h-10 ${className}`}>
       <Link

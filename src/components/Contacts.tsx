@@ -3,7 +3,7 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
-export function Contacts() {
+export default function Contacts() {
   return (
     <div className="flex md:flex-col gap-6 items-center md:items-stretch md:justify-center">
       <Link

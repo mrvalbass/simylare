@@ -1,7 +1,7 @@
 import { BACKGROUND_SECONDARY, TEXT_SECONDARY } from "@/app/constants/colors";
 import type { ReactNode } from "react";
 
-export function HighLightedText({ children }: { children: ReactNode }) {
+export default function HighLightedText({ children }: { children: ReactNode }) {
   return (
     <span className={`relative p-2 ${TEXT_SECONDARY} whitespace-nowrap`}>
       <span

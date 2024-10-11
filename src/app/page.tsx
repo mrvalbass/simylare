@@ -1,18 +1,14 @@
 import Image from "next/image";
-import Header from "@/components/Header";
 import heroBackground from "@/assets/hero-background.jpg";
 import landing1 from "@/assets/landing-1.jpg";
 import landing2 from "@/assets/landing-2.jpg";
 import { BACKGROUND_SECONDARY, TEXT_PRIMARY } from "./constants/colors";
-import Footer from "@/components/Footer";
-import { HighLightedText } from "@/components/HighlightedText";
-import { Separator } from "@/components/Separator";
+import HighLightedText from "@/components/HighlightedText";
+import Separator from "@/components/Separator";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-
+    <main>
       <section className="relative h-[200px] md:h-[350px]">
         <Image
           src={heroBackground}
@@ -20,10 +16,10 @@ export default function Home() {
           alt="mushrooms"
           className="object-cover rounded-b-2xl"
         />
-        <div className="flex flex-col absolute top-0 left-0 h-full w-full items-center bg-black/20 rounded-b-2xl">
-          <p
-            className={`flex text-beige/80 font-Libre text-2xl md:text-4xl h-full items-center mx-12 text-center`}
-          >
+        <div className="flex flex-col font-Libre absolute h-full w-full justify-center items-center bg-black/20 rounded-b-2xl">
+          <h1 className={` text-beige/80 text-4xl md:text-6xl`}>Simylare</h1>
+          <Separator className="bg-beige/80 w-1/4" />
+          <p className={` text-beige/80 text-2xl md:text-4xl text-center`}>
             Explorateur du royaume fongique
           </p>
         </div>
@@ -77,8 +73,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      <Footer />
-    </>
+    </main>
   );
 }

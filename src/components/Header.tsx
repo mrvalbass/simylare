@@ -1,15 +1,16 @@
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import {
   BACKGROUND_PRIMARY,
   BACKGROUND_SECONDARY,
   TEXT_PRIMARY,
   TEXT_SECONDARY,
 } from "../app/constants/colors";
-import { Socials } from "./Socials";
-import Link from "next/link";
-import { Logo } from "./Logo";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { UnderlinedAnimatedText } from "./UnderlinedAnimatedText";
+import Socials from "./Socials";
+import Logo from "./Logo";
+import UnderlinedAnimatedText from "./UnderlinedAnimatedText";
+import { CLICKABLE } from "../app/constants/style";
 
 export default function Header() {
   return (
@@ -31,16 +32,24 @@ export default function Header() {
       </div>
 
       <div className="flex w-full h-full md:px-24 items-center ">
-        <Logo className="basis-1/2 md:basis-auto" />
+        <Link
+          href="/"
+          className={`h-full basis-1/2 md:basis-auto ${CLICKABLE}`}
+        >
+          <Logo />
+        </Link>
         <nav className="hidden md:flex w-full h-full justify-center gap-40 items-center font-bold font-Hanken text-lg">
-          <Link href={"#"} className={`${TEXT_SECONDARY} underline-animation`}>
+          <Link
+            href="/marketplace"
+            className={`${TEXT_SECONDARY} underline-animation`}
+          >
             <UnderlinedAnimatedText lineColor={BACKGROUND_PRIMARY}>
-              Le Projet
+              Boutique
             </UnderlinedAnimatedText>
           </Link>
-          <Link href={"#"} className={`${TEXT_PRIMARY}`}>
+          <Link href="/contact" className={`${TEXT_PRIMARY}`}>
             <UnderlinedAnimatedText lineColor={BACKGROUND_SECONDARY}>
-              Boutique
+              Contact
             </UnderlinedAnimatedText>
           </Link>
         </nav>

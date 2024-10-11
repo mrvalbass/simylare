@@ -4,8 +4,8 @@ import {
   TEXT_PRIMARY,
   TEXT_SECONDARY,
 } from "../app/constants/colors";
-import { Contacts } from "./Contacts";
-import { Socials } from "./Socials";
+import Contacts from "./Contacts";
+import Socials from "./Socials";
 
 export default function Footer() {
   return (
