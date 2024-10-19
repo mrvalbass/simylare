@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Socials({ className }: { className?: string }) {
   return (
-    <div className={`flex gap-6 h-full max-h-7 md:max-h-10 ${className}`}>
+    <div className={`flex gap-6 h-1/3 ${className}`}>
       <Link
         href={"https://www.instagram.com/simylare.caluire/"}
         target="_blank"

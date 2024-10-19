@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased ${BACKGROUND_PRIMARY}`}>
+      <body className={`antialiased ${BACKGROUND_PRIMARY} overflow-auto`}>
         <Header />
         {children}
         <Footer />
