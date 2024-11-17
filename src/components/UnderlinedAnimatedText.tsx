@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import * as motion from "framer-motion/client";
+import { motion } from "framer-motion";
 import { CLICKABLE } from "@/app/constants/style";
 
 export default function UnderlinedAnimatedText({
@@ -7,7 +7,7 @@ export default function UnderlinedAnimatedText({
   lineColor,
 }: {
   children: ReactNode;
-  lineColor: string;
+  lineColor?: string;
 }) {
   return (
     <motion.div
@@ -17,7 +17,7 @@ export default function UnderlinedAnimatedText({
     >
       {children}
       <motion.span
-        className={`absolute left-0 bottom-0 h-0.5 ${lineColor}`}
+        className={`absolute bottom-0 left-0 h-0.5 ${lineColor}`}
         variants={{
           rest: { width: 0 },
           hover: { width: "100%" },
