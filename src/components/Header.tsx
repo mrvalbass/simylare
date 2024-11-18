@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import {
   BACKGROUND_PRIMARY,
   BACKGROUND_SECONDARY,
@@ -15,6 +13,7 @@ import { CLICKABLE } from "../app/constants/style";
 import NavBar from "./NavBar";
 import DrawerMenu from "./DrawerMenu";
 import { useState } from "react";
+import { FaBars } from "react-icons/fa6";
 
 const navBarMenuItems = [
   {
@@ -66,10 +65,12 @@ export default function Header() {
           </Link>
           <NavBar className="hidden md:flex" items={navBarMenuItems} animated />
           <Socials className={`hidden md:flex ${TEXT_PRIMARY}`} />
-          <div className="flex h-full basis-1/2 items-center justify-end px-10 md:hidden">
-            <FontAwesomeIcon
-              icon={faBars}
-              className={`h-1/3 ${TEXT_PRIMARY} ${CLICKABLE}`}
+          <div
+            className={`flex h-full basis-1/2 items-center justify-end px-10 ${TEXT_PRIMARY} md:hidden`}
+          >
+            <FaBars
+              size={25}
+              className={`${CLICKABLE}`}
               onClick={openMenu}
               aria-label="Ouvrir le menu"
             />

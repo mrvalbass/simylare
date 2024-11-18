@@ -1,14 +1,24 @@
 import { useEffect } from "react";
 import { BACKGROUND_SECONDARY, TEXT_SECONDARY } from "@/app/constants/colors";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CLICKABLE } from "@/app/constants/style";
 import NavBar from "./NavBar";
+import { FaArrowRight, FaEnvelope, FaHouse } from "react-icons/fa6";
+import { TbMushroomFilled } from "react-icons/tb";
 
 const DrawerMenuItems = [
-  { link: "/", text: "Accueil", color: `${TEXT_SECONDARY}` },
-  { link: "/marketplace", text: "Boutique", color: TEXT_SECONDARY },
-  { link: "/contact", text: "Contact", color: TEXT_SECONDARY },
+  { link: "/", text: "Accueil", color: `${TEXT_SECONDARY}`, icon: <FaHouse /> },
+  {
+    link: "/marketplace",
+    text: "Boutique",
+    color: TEXT_SECONDARY,
+    icon: <TbMushroomFilled />,
+  },
+  {
+    link: "/contact",
+    text: "Contact",
+    color: TEXT_SECONDARY,
+    icon: <FaEnvelope />,
+  },
 ];
 
 export default function DrawerMenu({
@@ -28,33 +38,34 @@ export default function DrawerMenu({
 
   return (
     <div
-      className={`fixed top-0 left-0 h-[100lvh] w-screen md:hidden z-50 transition-[visibility] duration-500 ${
+      className={`fixed left-0 top-0 z-50 h-[100lvh] w-screen transition-[visibility] duration-500 md:hidden ${
         isOpen ? "visible" : "invisible"
       }`}
     >
       <div
-        className={`absolute inset-0 transition-opacity duration-500 backdrop-blur-[2px] bg-black/30 ${
+        className={`absolute inset-0 bg-black/30 backdrop-blur-[2px] transition-opacity duration-500 ${
           isOpen ? "opacity-100" : "opacity-0"
         }`}
         onClick={close}
       ></div>
       <div
-        className={`absolute top-0 right-0 h-full w-1/2 transition-transform duration-500 rounded-l-[4svh] ${BACKGROUND_SECONDARY} ${
+        className={`absolute right-0 top-0 flex h-full w-1/2 flex-col items-center rounded-l-[4svh] transition-transform duration-500 ${BACKGROUND_SECONDARY} ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-end p-4">
-          <FontAwesomeIcon
-            icon={faArrowRight}
+        <div className="flex justify-end self-end p-4">
+          <FaArrowRight
             onClick={close}
-            className={`h-8 ${CLICKABLE} ${TEXT_SECONDARY}`}
+            className={`${CLICKABLE} ${TEXT_SECONDARY}`}
+            size={30}
           />
         </div>
         <NavBar
           onClick={close}
           items={DrawerMenuItems}
-          className="flex flex-col gap-8 mt-8"
+          className="mt-8 flex !w-2/3 flex-col items-stretch gap-8"
           animated={false}
+          icons
         />
       </div>
     </div>
