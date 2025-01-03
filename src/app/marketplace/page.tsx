@@ -42,7 +42,7 @@ export default function MarketPlace() {
           [...Array(1)].map((_, i) => (
             <SkeletonProductCard key={i} lineView={lineView} />
           ))}
-        {products &&
+        {Array.isArray(products) &&
           products.map((product, i) => (
             <ProductCard key={i} product={product} lineView={lineView} />
           ))}
