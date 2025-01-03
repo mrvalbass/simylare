@@ -1,7 +1,9 @@
+import { TEXT_PRIMARY } from "../constants/colors";
+
 export default function Legal() {
   return (
     <main className="min-h-[80svh] md:min-h-[70svh] flex items-center justify-center">
-      <div className="m-5 w-[80%]">
+      <div className={`m-5 w-[80%] ${TEXT_PRIMARY}`}>
         <h1 className="text-xl font-bold">Mentions légales</h1>
 
         <section className="pl-5 mt-5">

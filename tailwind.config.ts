@@ -17,6 +17,9 @@ const config: Config = {
         Hanken: ["Hanken Grotesk", "sans-serif"],
         Libre: ["Libre Baskerville", "serif"],
       },
+      animation: {
+        "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
     },
   },
   plugins: [],

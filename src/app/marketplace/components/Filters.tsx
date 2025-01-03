@@ -3,15 +3,15 @@ import {
   TEXT_PRIMARY,
   TEXT_SECONDARY,
 } from "@/app/constants/colors";
-import type { Dispatch, SetStateAction } from "react";
 import { FaGrip, FaListUl } from "react-icons/fa6";
+import { View } from "../page";
 
 interface FiltersProps {
   lineView: boolean;
-  setLineView: Dispatch<SetStateAction<boolean>>;
+  toggleView: (view: View) => void;
 }
 
-export default function Filters({ lineView, setLineView }: FiltersProps) {
+export default function Filters({ lineView, toggleView }: FiltersProps) {
   return (
     <div className="relative flex justify-end rounded p-2">
       <div className="relative flex rounded">
@@ -25,14 +25,14 @@ export default function Filters({ lineView, setLineView }: FiltersProps) {
             lineView ? TEXT_PRIMARY : TEXT_SECONDARY
           } z-10`}
         >
-          <FaGrip onClick={() => setLineView(false)} />
+          <FaGrip onClick={() => toggleView(View.Grid)} />
         </div>
         <div
           className={`aspect-square p-2 ${
             lineView ? TEXT_SECONDARY : TEXT_PRIMARY
           }`}
         >
-          <FaListUl onClick={() => setLineView(true)} />
+          <FaListUl onClick={() => toggleView(View.Line)} />
         </div>
       </div>
     </div>

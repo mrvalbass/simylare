@@ -41,7 +41,7 @@ export default function Footer() {
           target="_blank"
           className={`font-Hanken text-xs ${CLICKABLE}`}
         >
-          ©Valentin Guillot - 2024
+          ©Valentin Guillot - 2025
         </Link>
       </div>
     </footer>
