@@ -7,11 +7,11 @@ import {
 } from "../constants/colors";
 import { FaEtsy } from "react-icons/fa6";
 
-export default function MarketPlace() {
+export default function Etsy() {
   return (
     <main className="min-h-[80svh] md:min-h-[70svh] flex items-center justify-center">
       <Link
-        href="http://simylare-back.vercel.app/etsy/auth"
+        href="https://simylare-back.vercel.app/etsy/auth"
         className={`${BACKGROUND_SECONDARY} px-3 py-2 rounded-xl flex items-center gap-3`}
         target="_blank"
       >

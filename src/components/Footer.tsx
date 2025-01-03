@@ -33,7 +33,7 @@ export default function Footer() {
       <div
         className={`flex justify-around py-1 ${BACKGROUND_SECONDARY} ${TEXT_SECONDARY}`}
       >
-        <Link href="#" className={`font-Hanken text-xs ${CLICKABLE}`}>
+        <Link href="/legal" className={`font-Hanken text-xs ${CLICKABLE}`}>
           Mentions Légales
         </Link>
         <Link

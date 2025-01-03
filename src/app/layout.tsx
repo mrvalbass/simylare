@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased ${BACKGROUND_PRIMARY} overflow-auto`}>
+      <body
+        className={`${BACKGROUND_PRIMARY} overflow-auto flex flex-col min-h-screen justify-between`}
+      >
         <Header />
         {children}
         <Footer />
