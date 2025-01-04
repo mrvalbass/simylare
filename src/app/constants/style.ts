@@ -1,2 +1,2 @@
 export const CLICKABLE =
-  "cursor-pointer hover:scale-105 active:scale-95 transition";
+  "cursor-pointer md:hover:scale-105 md:active:scale-95 transition";

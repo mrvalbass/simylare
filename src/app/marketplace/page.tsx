@@ -27,7 +27,9 @@ export default function MarketPlace() {
   return (
     <main className="min-h-[80svh] md:min-h-[70svh] w-[80%] flex flex-col p-5 mx-auto">
       <Filters view={view} toggleView={toggleView} />
-      <div className="flex flex-wrap py-5 md:px-10 gap-5 overflow-y-auto">
+      <div
+        className={`flex flex-wrap py-5 md:px-10 gap-5 overflow-y-auto ${view === View.Line ? "justify-center" : ""}`}
+      >
         {loading &&
           [...Array(1)].map((_, i) => (
             <SkeletonProductCard key={i} view={view} />
