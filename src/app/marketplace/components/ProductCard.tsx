@@ -2,7 +2,7 @@
 import { BACKGROUND_SECONDARY, TEXT_SECONDARY } from "@/app/constants/colors";
 import Image from "next/image";
 import { CLICKABLE } from "@/app/constants/style";
-import { Product } from "../page";
+import { Product } from "../types";
 
 interface ProductCardProps {
   product: Product;

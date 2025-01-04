@@ -4,22 +4,7 @@ import ProductCard from "./components/ProductCard";
 import Filters from "./components/Filters";
 import { useFetch } from "@/hooks/useFetch";
 import SkeletonProductCard from "./components/SkeletonProductCard";
-
-export interface Product {
-  title: string;
-  description: string;
-  quantity: number;
-  url: string;
-  tags: Array<string>;
-  materials: Array<string>;
-  price: string;
-  imgUrls: Array<string>;
-}
-
-export enum View {
-  Line = "line",
-  Grid = "grid",
-}
+import { Product, View } from "./types";
 
 export default function MarketPlace() {
   const [lineView, setLineView] = useState<boolean>(

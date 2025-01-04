@@ -4,7 +4,7 @@ import {
   TEXT_SECONDARY,
 } from "@/app/constants/colors";
 import { FaGrip, FaListUl } from "react-icons/fa6";
-import { View } from "../page";
+import { View } from "../types";
 
 interface FiltersProps {
   lineView: boolean;
