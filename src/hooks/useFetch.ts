@@ -7,10 +7,14 @@ export const useFetch = <T>(
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     (async () => {
-      setLoading(true);
-      const responseData = await fetch(url).then((r) => r.json());
-      setData(responseData);
-      setLoading(false);
+      try {
+        setLoading(true);
+        const responseData = await fetch(url).then((r) => r.json());
+        setData(responseData);
+        setLoading(false);
+      } catch (e) {
+        console.log(e);
+      }
     })();
   }, [url]);
   return { loading, data };

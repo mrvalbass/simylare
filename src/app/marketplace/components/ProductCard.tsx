@@ -2,25 +2,25 @@
 import { BACKGROUND_SECONDARY, TEXT_SECONDARY } from "@/app/constants/colors";
 import Image from "next/image";
 import { CLICKABLE } from "@/app/constants/style";
-import { Product } from "../types";
+import { Product, View } from "../types";
 
 interface ProductCardProps {
   product: Product;
-  lineView: boolean;
+  view: View;
 }
 
-export default function ProductCard({ product, lineView }: ProductCardProps) {
+export default function ProductCard({ product, view }: ProductCardProps) {
   const { title, imgUrls } = product;
   return (
     <div
       className={`rounded-2xl shadow-lg ${BACKGROUND_SECONDARY} ${TEXT_SECONDARY} ${CLICKABLE} flex items-center ${
-        lineView
+        view === View.Line
           ? "w-full max-w-[800px] mx-auto"
           : "flex-col basis-full md:basis-[calc((100%-40px)/3)]"
       } overflow-hidden`}
     >
       <div
-        className={`relative ${lineView ? "h-24 basis-1/4" : "h-36 md:h-48 w-full"}`}
+        className={`relative ${view === View.Line ? "h-24 basis-1/4" : "h-36 md:h-48 w-full"}`}
       >
         <Image
           alt={`${title} image`}
@@ -32,7 +32,7 @@ export default function ProductCard({ product, lineView }: ProductCardProps) {
         />
       </div>
       <div
-        className={`p-2 flex justify-center items-center ${lineView ? "basis-3/4" : "flex-col"}`}
+        className={`p-2 flex justify-center items-center ${view === View.Line ? "basis-3/4" : "flex-col"}`}
       >
         <h2 className="font-bold font-Libre text-center">{title}</h2>
       </div>
