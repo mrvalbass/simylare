@@ -2,8 +2,12 @@ import Image from "next/image";
 import heroBackground from "@/assets/hero-background.jpg";
 import landing1 from "@/assets/landing-1.jpg";
 import landing2 from "@/assets/landing-2.jpg";
-import { BACKGROUND_SECONDARY, TEXT_PRIMARY } from "./constants/colors";
-import HighLightedText from "@/components/HighlightedText";
+import {
+  BACKGROUND_SECONDARY,
+  TEXT_PRIMARY,
+  TEXT_SECONDARY,
+} from "./constants/colors";
+import HighLightedText, { Intent } from "@/components/HighlightedText";
 import Separator from "@/components/Separator";
 
 export default function Home() {
@@ -31,7 +35,10 @@ export default function Home() {
           className={`font-Libre text-xl md:text-3xl text-center m-5 md:m-10 font-bold ${TEXT_PRIMARY} leading-loose md:leading-[2]`}
         >
           Découvrez l&apos; incroyable potentiel des{" "}
-          <HighLightedText>champignons</HighLightedText> avec Simylare
+          <HighLightedText intent={Intent.Secondary}>
+            champignons
+          </HighLightedText>{" "}
+          avec Simylare
         </p>
         <Separator className={`${BACKGROUND_SECONDARY}`} />
       </section>
@@ -72,6 +79,35 @@ export default function Home() {
             : apporter de la circularité à nos modes de production
           </p>
         </div>
+      </section>
+      <Separator className={`${BACKGROUND_SECONDARY}`} />
+      <section
+        className={`w-4/5 max-w-[1000px] mx-auto my-5 md:my-10 flex gap-10 md:gap-20 font-Hanken ${TEXT_PRIMARY}`}
+      >
+        <div
+          className={`basis-1/2 md:text-xl ${BACKGROUND_SECONDARY} ${TEXT_SECONDARY} px-10 rounded-3xl flex items-center -z-20`}
+        >
+          <p className="md:leading-[3rem]">
+            Retrouvez-nous au
+            <HighLightedText intent={Intent.Primary}>
+              Marché d&apos;Artisans et Créteurs de Caluire-et-Cuire
+            </HighLightedText>{" "}
+            <br />
+            Tous les{" "}
+            <HighLightedText intent={Intent.Primary}>
+              samedis
+            </HighLightedText>{" "}
+            de{" "}
+            <HighLightedText intent={Intent.Primary}>8h à 13h</HighLightedText>
+          </p>
+        </div>
+        <iframe
+          className="rounded-3xl basis-1/2"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1391.0160518678906!2d4.845267012710624!3d45.79058455561865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ebfeec8d6ee9%3A0x42ffd4738fe45a20!2sArtisans%20et%20Cr%C3%A9ateurs%20de%20Caluire!5e0!3m2!1sfr!2sfr!4v1736100450337!5m2!1sfr!2sfr"
+          width="600"
+          height="300"
+          loading="lazy"
+        ></iframe>{" "}
       </section>
     </main>
   );

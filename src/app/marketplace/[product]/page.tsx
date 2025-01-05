@@ -2,7 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import type { Product } from "../types";
 import Image from "next/image";
-import HighLightedText from "@/components/HighlightedText";
+import HighLightedText, { Intent } from "@/components/HighlightedText";
 import {
   BACKGROUND_CTA,
   BACKGROUND_PRIMARY,
@@ -29,7 +29,7 @@ export default function Product() {
     <main className="flex flex-col grow items-center">
       <div className="w-[75%] max-w-[1000px] m-12 flex flex-col gap-6 md:gap-12 items-center">
         <h1 className="font-Libre font-bold text-lg md:text-2xl self-center">
-          <HighLightedText>{title}</HighLightedText>
+          <HighLightedText intent={Intent.Secondary}>{title}</HighLightedText>
         </h1>
         <div className="flex flex-col md:flex-row gap-6 md:gap-12 self-center">
           {imgUrls.map((imgUrl, i) => (
