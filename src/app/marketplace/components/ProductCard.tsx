@@ -5,19 +5,25 @@ import { CLICKABLE } from "@/app/constants/style";
 import { Product, View } from "../types";
 
 interface ProductCardProps {
+  onClick: () => void;
   product: Product;
   view: View;
 }
 
-export default function ProductCard({ product, view }: ProductCardProps) {
+export default function ProductCard({
+  product,
+  view,
+  onClick,
+}: ProductCardProps) {
   const { title, imgUrls } = product;
   return (
     <div
-      className={`relative rounded-2xl shadow-lg ${BACKGROUND_SECONDARY} ${TEXT_SECONDARY} ${CLICKABLE} flex items-center ${
+      className={`relative rounded-xl shadow-lg ${BACKGROUND_SECONDARY} ${TEXT_SECONDARY} ${CLICKABLE} flex items-center ${
         view === View.Line
           ? "w-full max-w-[800px] h-24"
           : "flex-col aspect-[5/3] basis-full md:basis-[calc((100%-40px)/3)]"
       } overflow-hidden`}
+      onClick={onClick}
     >
       <div
         className={`relative ${view === View.Line ? "w-2/5 h-full" : "h-4/5 w-full"}`}

@@ -12,6 +12,8 @@ const config: Config = {
       colors: {
         forestGreen: "#014652",
         beige: "#fefae0",
+        flashyGreen: "#B9FF67",
+        woodenBrown: "#65411a",
       },
       fontFamily: {
         Hanken: ["Hanken Grotesk", "sans-serif"],

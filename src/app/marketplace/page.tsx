@@ -5,8 +5,10 @@ import { useFetch } from "@/hooks/useFetch";
 import SkeletonProductCard from "./components/SkeletonProductCard";
 import { Product, View } from "./types";
 import { useCookie } from "@/hooks/useCookie";
+import { useRouter } from "next/navigation";
 
 export default function MarketPlace() {
+  const router = useRouter();
   const { value: view, setCookie: setSavedView } = useCookie<View>(
     "marketplaceView",
     View.Grid
@@ -18,6 +20,10 @@ export default function MarketPlace() {
 
   const toggleView = (view: View) => {
     setSavedView(view);
+  };
+
+  const handleProductCardClick = (productId: number, product: Product) => {
+    router.push(`/marketplace/${productId}?product=${JSON.stringify(product)}`);
   };
 
   if (!view) {
@@ -36,7 +42,12 @@ export default function MarketPlace() {
           ))}
         {Array.isArray(products) &&
           products.map((product, i) => (
-            <ProductCard key={i} product={product} view={view} />
+            <ProductCard
+              key={i}
+              product={product}
+              view={view}
+              onClick={() => handleProductCardClick(i, product)}
+            />
           ))}
       </div>
     </main>
