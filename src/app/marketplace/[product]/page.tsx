@@ -33,10 +33,7 @@ export default function Product() {
         </h1>
         <div className="flex flex-col md:flex-row gap-6 md:gap-12 self-center">
           {imgUrls.map((imgUrl, i) => (
-            <div
-              key={i}
-              className="relative w-[250px] md:w-[250px] aspect-square"
-            >
+            <div key={i} className="relative w-[250px] aspect-square">
               <Image
                 src={imgUrl}
                 alt={`${title} image ${i}`}
@@ -59,7 +56,7 @@ export default function Product() {
           Buy on Etsy
         </Link>
         <div className="flex flex-col md:flex-row gap-6 md:gap-12">
-          <div className="flex flex-col gap-1 justify-center items-center basis-1/2">
+          <div className="flex flex-col gap-1 justify-center items-center basis-1/2 md:order-last">
             <p className={`${TEXT_PRIMARY} font-Hanken text-2xl font-bold`}>
               {price.replace("EUR", "€")}
             </p>
