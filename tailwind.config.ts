@@ -21,6 +21,13 @@ const config: Config = {
       },
       animation: {
         "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        banner: "banner 25s linear infinite",
+      },
+      keyframes: {
+        banner: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-100% / 3))" },
+        },
       },
     },
   },

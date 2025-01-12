@@ -2,6 +2,13 @@ import Image from "next/image";
 import heroBackground from "@/assets/hero-background.jpg";
 import landing1 from "@/assets/landing-1.jpg";
 import landing2 from "@/assets/landing-2.jpg";
+import anciela from "@/assets/partners/anciela-logo.png";
+import biocoop from "@/assets/partners/biocoop-logo.png";
+import caluire from "@/assets/partners/caluire-et-cuire-logo.png";
+import cizeron from "@/assets/partners/cizeron-bio-logo.png";
+import mycosphere from "@/assets/partners/la-mycosphère-logo.png";
+import moulinotte from "@/assets/partners/moulinlotte-logo.jpg";
+import terrestris from "@/assets/partners/terrestris-logo.png";
 import {
   BACKGROUND_PRIMARY,
   BACKGROUND_SECONDARY,
@@ -88,6 +95,40 @@ const ContentSection = () => {
   );
 };
 
+const BannerSection = () => {
+  const partners = [
+    anciela,
+    biocoop,
+    caluire,
+    cizeron,
+    mycosphere,
+    moulinotte,
+    terrestris,
+  ];
+  return (
+    <section>
+      <h2 className={`font-Libre text-3xl text-center ${TEXT_PRIMARY} mb-10`}>
+        Nos partenaires :
+      </h2>
+      <div className="w-full overflow-hidden">
+        <div className="flex gap-10 animate-banner w-fit pl-10">
+          {[...partners, ...partners, ...partners].map((img, i) => (
+            <div key={i} className="relative min-w-[200px] h-[150px]">
+              <Image
+                src={img}
+                fill
+                sizes="100%"
+                alt={`partner ${i} logo`}
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const MapSection = () => {
   const HighlightedTextStyle = `whitespace-nowrap ${BACKGROUND_PRIMARY} ${TEXT_PRIMARY} rounded px-2 py-1 font-Libre`;
   return (
@@ -127,6 +168,8 @@ export default function Home() {
       <HighLightSection />
       <Separator className={`${BACKGROUND_SECONDARY} my-10`} />
       <ContentSection />
+      <Separator className={`${BACKGROUND_SECONDARY} my-10`} />
+      <BannerSection />
       <Separator className={`${BACKGROUND_SECONDARY} my-10`} />
       <MapSection />
     </main>
