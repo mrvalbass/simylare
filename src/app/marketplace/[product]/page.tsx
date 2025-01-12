@@ -50,7 +50,7 @@ export default function Product() {
           className={`flex items-center gap-2 ${BACKGROUND_CTA} p-3 rounded-lg ${TEXT_SECONDARY} font-Hanken text-lg text-center`}
         >
           <FaEtsy
-            className={`${BACKGROUND_PRIMARY} ${TEXT_CTA} p-1 rounded-md`}
+            className={`${BACKGROUND_PRIMARY} ${TEXT_CTA} p-1 rounded-md font-Hanken`}
             size={30}
           />
           Buy on Etsy
