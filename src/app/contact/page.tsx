@@ -22,6 +22,7 @@ export default function MarketPlace() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(formContent);
+    setFormContent({});
   };
   return (
     <main className="grow flex flex-col">
@@ -31,7 +32,7 @@ export default function MarketPlace() {
         Contact
       </h1>
       <form
-        className="flex flex-col p-10 gap-10 grow w-4/5 max-w-[1000px] self-center"
+        className="flex flex-col p-10 gap-10 grow w-full md:w-4/5 max-w-[1000px] self-center"
         onSubmit={handleSubmit}
       >
         <div className={fieldClass}>
@@ -44,6 +45,7 @@ export default function MarketPlace() {
             placeholder="Nom"
             className={inputClass}
             autoComplete="name"
+            value={formContent.name}
             onChange={(e) =>
               setFormContent((prev) => ({ ...prev, name: e.target.value }))
             }
@@ -59,6 +61,7 @@ export default function MarketPlace() {
             placeholder="Email"
             className={inputClass}
             autoComplete="email"
+            value={formContent.email}
             onChange={(e) =>
               setFormContent((prev) => ({ ...prev, email: e.target.value }))
             }
@@ -72,6 +75,7 @@ export default function MarketPlace() {
             id="message"
             className={`${inputClass} grow`}
             placeholder="Message"
+            value={formContent.message}
             onChange={(e) =>
               setFormContent((prev) => ({ ...prev, message: e.target.value }))
             }
