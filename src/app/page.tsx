@@ -107,13 +107,18 @@ const BannerSection = () => {
   ];
   return (
     <section>
-      <h2 className={`font-Libre text-3xl text-center ${TEXT_PRIMARY} mb-10`}>
+      <h2
+        className={`font-Libre text-xl md:text-3xl text-center ${TEXT_PRIMARY} mb-5 md:mb-10`}
+      >
         Nos partenaires :
       </h2>
       <div className="w-full overflow-hidden">
-        <div className="flex gap-10 animate-banner w-fit pl-10">
+        <div className="flex gap-8 md:gap-10 animate-banner-mobile md:animate-banner w-fit pl-8 md:pl-10">
           {[...partners, ...partners, ...partners].map((img, i) => (
-            <div key={i} className="relative min-w-[200px] h-[150px]">
+            <div
+              key={i}
+              className="relative min-w-[130px] md:min-w-[200px] h-[90px] md:h-[150px]"
+            >
               <Image
                 src={img}
                 fill

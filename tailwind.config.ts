@@ -21,7 +21,8 @@ const config: Config = {
       },
       animation: {
         "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        banner: "banner 25s linear infinite",
+        banner: "banner 60s linear infinite",
+        "banner-mobile": "banner 30s linear infinite",
       },
       keyframes: {
         banner: {
