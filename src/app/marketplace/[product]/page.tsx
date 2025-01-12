@@ -20,7 +20,6 @@ export default function Product() {
   if (!productString) {
     return;
   }
-  console.log(productString);
 
   const { title, description, imgUrls, url, price, quantity }: Product =
     JSON.parse(productString);

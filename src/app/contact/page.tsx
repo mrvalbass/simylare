@@ -14,20 +14,38 @@ interface FormContent {
 }
 
 export default function MarketPlace() {
-  const [formContent, setFormContent] = useState<FormContent>({});
+  const defaultForm = {
+    name: "",
+    email: "",
+    message: "",
+  };
+  const [formContent, setFormContent] = useState<FormContent>(defaultForm);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    const options = {
+      method: "POST",
+      body: JSON.stringify(formContent),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const response = await fetch(
+      "https://simylare-back.vercel.app/contact/email",
+      options
+    ).then((r) => r.json());
+    console.log(response);
+    setFormContent(defaultForm);
+  };
 
   const fieldClass = "flex flex-col gap-2";
   const labelClass = `${TEXT_PRIMARY} font-Libre text-md`;
   const inputClass = `${BACKGROUND_SECONDARY} ${TEXT_SECONDARY} font-Hanken rounded px-2 py-1`;
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    console.log(formContent);
-    setFormContent({});
-  };
+
   return (
     <main className="grow flex flex-col">
       <h1
-        className={`${TEXT_PRIMARY} font-Libre text-2xl text-center mt-10 md:hidden`}
+        className={`${TEXT_PRIMARY} font-Libre text-2xl text-center mt-10 md:hidden font-bold`}
       >
         Contact
       </h1>
