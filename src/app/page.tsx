@@ -69,6 +69,7 @@ const ContentSection = () => {
           <Image
             src={landing1}
             fill={true}
+            sizes="100%"
             alt="cooked mushrooms"
             className="object-cover rounded-3xl"
           />
@@ -79,6 +80,7 @@ const ContentSection = () => {
           <Image
             src={landing2}
             fill={true}
+            sizes="100%"
             alt="cooked mushrooms"
             className="object-cover rounded-3xl"
           />
@@ -167,7 +169,7 @@ const MapSection = () => {
 
 export default function Home() {
   return (
-    <main>
+    <main className="grow">
       <HeroSection />
       <Separator className={`${BACKGROUND_SECONDARY} my-10`} />
       <HighLightSection />

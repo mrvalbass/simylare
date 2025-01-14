@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${BACKGROUND_PRIMARY} overflow-auto flex flex-col min-h-screen justify-between`}
+        className={`${BACKGROUND_PRIMARY} overflow-auto flex flex-col min-h-[100svh] justify-between`}
       >
         <Header />
         {children}
