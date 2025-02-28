@@ -13,6 +13,7 @@ import {
 } from "@/app/constants/colors";
 import Link from "next/link";
 import { FaEtsy } from "react-icons/fa6";
+import he from "he";
 
 export default function Product() {
   const searchParams = useSearchParams();
@@ -20,9 +21,8 @@ export default function Product() {
   if (!productString) {
     return;
   }
-
   const { title, description, imgUrls, url, price, quantity }: Product =
-    JSON.parse(productString);
+    JSON.parse(decodeURIComponent(he.decode(productString)));
 
   return (
     <main className="flex flex-col grow items-center">

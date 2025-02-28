@@ -23,7 +23,9 @@ export default function MarketPlace() {
   };
 
   const handleProductCardClick = (productId: number, product: Product) => {
-    router.push(`/marketplace/${productId}?product=${JSON.stringify(product)}`);
+    router.push(
+      `/marketplace/${productId}?product=${encodeURIComponent(JSON.stringify(product))}`
+    );
   };
 
   if (!view) {
